@@ -4,11 +4,7 @@ import AppRouter from "./components/AppRouter";
 //Pages
 
 function App() {
-    return (
-        <div>
-            <AppRouter />
-        </div>
-    );
+    return <AppRouter />;
 }
 
 export default App;

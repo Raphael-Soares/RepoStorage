@@ -2,9 +2,12 @@ import {BrowserRouter as Router, Routes, Route, Navigate} from "react-router-dom
 import {useContext} from "react";
 
 import Login from "../pages/login/Login";
-import Home from "../pages/home/HomePage";
+import Default from "../pages/Default";
+import Home from "../pages/home/Home";
+import Favorites from "../pages/favorites/Favorites";
 
 import {AuthProvider, AuthContext} from "../contexts/Auth";
+import NotFound from "../pages/NotFound";
 
 function AppRouter() {
     const Private = ({children}) => {
@@ -27,10 +30,14 @@ function AppRouter() {
                         path="/"
                         element={
                             <Private>
-                                <Home />
+                                <Default />
                             </Private>
                         }
-                    />
+                    >
+                        <Route path="/favorites" element={<Favorites />} />
+                        <Route path="/" element={<Home />} />
+                        <Route path="*" element={<NotFound />}></Route>
+                    </Route>
                 </Routes>
             </AuthProvider>
         </Router>
