@@ -7,7 +7,9 @@ import Home from "../pages/home/Home";
 import Favorites from "../pages/favorites/Favorites";
 
 import {AuthProvider, AuthContext} from "../contexts/Auth";
+import {ReposProvider, ReposContext} from "../contexts/Repos";
 import NotFound from "../pages/NotFound";
+import Repository from "../pages/repository/Repository";
 
 function AppRouter() {
     const Private = ({children}) => {
@@ -23,22 +25,25 @@ function AppRouter() {
     return (
         <Router>
             <AuthProvider>
-                <Routes>
-                    <Route path="/login" element={<Login />} />
+                <ReposProvider>
+                    <Routes>
+                        <Route path="/login" element={<Login />} />
 
-                    <Route
-                        path="/"
-                        element={
-                            <Private>
-                                <Default />
-                            </Private>
-                        }
-                    >
-                        <Route path="/favorites" element={<Favorites />} />
-                        <Route path="/" element={<Home />} />
-                        <Route path="*" element={<NotFound />}></Route>
-                    </Route>
-                </Routes>
+                        <Route
+                            path="/"
+                            element={
+                                <Private>
+                                    <Default />
+                                </Private>
+                            }
+                        >
+                            <Route path="/favorites" element={<Favorites />} />
+                            <Route path="/repository/:id" element={<Repository />} />
+                            <Route path="/" element={<Home />} />
+                            <Route path="*" element={<NotFound />}></Route>
+                        </Route>
+                    </Routes>
+                </ReposProvider>
             </AuthProvider>
         </Router>
     );

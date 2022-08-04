@@ -1,35 +1,18 @@
-import {useEffect, useState} from "react";
+import {useEffect, useState, useContext} from "react";
+import {Link} from "react-router-dom";
+import {ReposContext} from "../../contexts/Repos";
 
 function Home() {
-    const [data, setData] = useState([]);
-
-    useEffect(() => {
-        fetch("https://api.github.com/users/Raphael-Soares/repos")
-            .then((res) => res.json())
-            .then((res) => setData(res));
-    }, []);
-
-    function handleFavorite(repo) {
-        setData(
-            data.map((item) => {
-                if (item.name === repo.name) {
-                    return {...item, favorite: !item.favorite};
-                }
-                return item;
-            })
-        );
-    }
-
+    const {repos} = useContext(ReposContext);
     return (
         <>
             <h1>Home</h1>
 
             <h2>Repositories</h2>
             <ul>
-                {data.map((repo) => (
+                {repos.map((repo) => (
                     <li key={repo.id}>
-                        {repo.name} {repo.favorite && <span>&hearts;</span>}
-                        <button onClick={() => handleFavorite(repo)}>Fav</button>
+                        <Link to={`repository/${repo.id}`}>{repo.name}</Link>
                     </li>
                 ))}
             </ul>
