@@ -6,7 +6,8 @@ import "./Login.scss";
 function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const {authenticated, login} = useContext(AuthContext);
+
+    const {login} = useContext(AuthContext);
 
     function handleSubmit(event) {
         event.preventDefault();
@@ -17,7 +18,6 @@ function Login() {
         <div id="login">
             <form onSubmit={handleSubmit}>
                 <h1>Login </h1>
-                <p>{String(authenticated)}</p>
                 <div className="field">
                     <label htmlFor="email">Email</label>
                     <input type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} />
