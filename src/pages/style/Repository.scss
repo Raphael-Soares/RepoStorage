@@ -1,0 +1,12 @@
+@use "../../style/main";
+
+.Repository {
+    .title {
+        margin-bottom: 0.5em;
+        text-align: center;
+        p {
+            color: main.$font-color-secondary;
+            font-weight: bold;
+        }
+    }
+}

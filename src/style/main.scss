@@ -1,9 +1,26 @@
-@use "./mixins";
-@use "./variables";
+$font-stack: arial, sans-serif;
+$primary-color: #000000;
+$secondary-color: #5b00d1;
+
+$font-color: #05001f;
+$font-color-secondary: #938d9b;
+
+@mixin center() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin button-clear() {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Roboto", sans-serif;
+    font-family: $font-stack;
+    color: $font-color;
 }

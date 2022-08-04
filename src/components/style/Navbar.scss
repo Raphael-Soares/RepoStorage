@@ -1,24 +1,48 @@
+@use "../../style/main";
+
 nav {
-    display: flex;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    .logo {
+        font-size: 1.5rem;
+        color: main.$primary-color;
+    }
+
+    .Link {
+        color: main.$primary-color;
+        transition: 0.2s;
+        &:hover {
+            color: main.$secondary-color;
+        }
+    }
+    @include main.center();
     flex-direction: row;
     justify-content: space-between;
     padding: 2rem;
 
     ul {
-        display: flex;
-        flex-direction: row;
+        @include main.center();
         justify-content: space-between;
         list-style: none;
-        text-decoration: none;
-
-        margin: 0;
-        padding: 0;
     }
     li {
+        @include main.center();
         margin: 0 2rem;
+        transition: 0.2s;
     }
     a {
         text-decoration: none;
         color: black;
+    }
+
+    .button-link {
+        @include main.button-clear();
+        @include main.center();
+        transition: 0.2s;
+        color: main.$primary-color;
+        font-size: 1rem;
+        &:hover {
+            color: main.$secondary-color;
+        }
     }
 }

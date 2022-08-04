@@ -1,0 +1,36 @@
+@use "../../style/main";
+
+.home {
+    h2 {
+        font-size: 2rem;
+        color: main.$primary-color;
+        text-align: center;
+    }
+    ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        li {
+            margin: 1rem;
+        }
+        .Link {
+            text-decoration: none;
+        }
+        p {
+            font-size: 1rem;
+            color: main.$font-color-secondary;
+            font-weight: bold;
+        }
+        h1 {
+            font-size: 2rem;
+            color: main.$primary-color;
+            transition: 0.2s;
+            transform: translateY(0);
+            &:hover {
+                cursor: pointer;
+                text-decoration: underline;
+            }
+        }
+    }
+}

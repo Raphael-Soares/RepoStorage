@@ -1,6 +1,7 @@
 import {useContext} from "react";
 import {Link} from "react-router-dom";
 import {AuthContext} from "../contexts/Auth";
+
 import "./style/Navbar.scss";
 
 function Navbar() {
@@ -16,14 +17,20 @@ function Navbar() {
             </a>
             <ul>
                 <li>
-                    <Link to="/">Home</Link>
+                    <Link className="Link" to="/">
+                        Home
+                    </Link>
                 </li>
                 <li>
-                    <Link to="favorites">Favoites</Link>
+                    <Link className="Link" to="favorites">
+                        Favoites
+                    </Link>
                 </li>
 
                 <li>
-                    <button onClick={handleLogout}>Logout</button>
+                    <button onClick={handleLogout} className="button-link">
+                        Sair
+                    </button>
                 </li>
             </ul>
         </nav>

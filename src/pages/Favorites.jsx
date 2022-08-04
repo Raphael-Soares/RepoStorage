@@ -1,5 +1,5 @@
 import {useContext} from "react";
-import {ReposContext} from "../../contexts/Repos";
+import {ReposContext} from "../contexts/Repos";
 
 function Favorites() {
     const {repos, handleFavorite} = useContext(ReposContext);

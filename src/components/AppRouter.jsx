@@ -1,15 +1,15 @@
 import {BrowserRouter as Router, Routes, Route, Navigate} from "react-router-dom";
 import {useContext} from "react";
 
-import Login from "../pages/login/Login";
+import Login from "../pages/Login";
 import Default from "../pages/Default";
-import Home from "../pages/home/Home";
-import Favorites from "../pages/favorites/Favorites";
+import Home from "../pages/Home";
+import Favorites from "../pages/Favorites";
 
 import {AuthProvider, AuthContext} from "../contexts/Auth";
 import {ReposProvider, ReposContext} from "../contexts/Repos";
 import NotFound from "../pages/NotFound";
-import Repository from "../pages/repository/Repository";
+import Repository from "../pages/Repository";
 
 function AppRouter() {
     const Private = ({children}) => {
